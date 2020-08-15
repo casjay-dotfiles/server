@@ -1,0 +1,5 @@
+# SOURCE Files
+All files beginning with 00 and zz will
+deleted on install and updates
+Bash will source all files ending in .bash
+# 

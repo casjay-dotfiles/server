@@ -1,0 +1,228 @@
+#!/usr/bin/env bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+enable_color_support() {
+
+    if [[ $COLORTERM == gnome-* && $TERM == xterm ]] \
+        && infocmp gnome-256color &> /dev/null; then
+        export TERM="gnome-256color"
+    elif infocmp xterm-256color &> /dev/null; then
+        export TERM="xterm-256color"
+    fi
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# [!] Don't break this function into smaller, more specialized ones
+# as you will only pollute the global space even more. This function
+# cannot be unset because it's called every time the prompt string
+# is shown.
+
+get_git_repository_details() {
+
+    local branchName=""
+    local tmp=""
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if the current directory is in a Git repository.
+
+    ! git rev-parse &>/dev/null \
+        && return
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if in `.git/` directory (some of the following
+    # checks don't make sense/won't work in the `.git` directory).
+
+    [ "$(git rev-parse --is-inside-git-dir)" == "true" ] \
+        && return
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check for uncommitted changes in the index.
+
+    if ! git diff --quiet --ignore-submodules --cached; then
+        tmp="$tmp+";
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check for unstaged changes.
+
+    if ! git diff-files --quiet --ignore-submodules --; then
+        tmp="$tmp!";
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check for untracked files.
+
+    if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+        tmp="$tmp?";
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check for stashed files.
+
+    if git rev-parse --verify refs/stash &>/dev/null; then
+        tmp="$tmp$";
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    [ -n "$tmp" ] \
+        && tmp=" [$tmp]"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    branchName="$( printf "%s" "$( git rev-parse --abbrev-ref HEAD 2> /dev/null \
+        || git rev-parse --short HEAD 2> /dev/null \
+        || printf " (unknown)" )" | tr -d "\n" )"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    printf "%s" "$1$branchName$tmp"
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+set_prompts() {
+
+    local bold=$(tput bold 2> /dev/null)
+    local reset=$(tput sgr0 2> /dev/null)
+
+    local cyan=""
+    local green=""
+    local orange=""
+    local white=""
+    local yellow=""
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    if [ "$(tput colors 2> /dev/null || printf "0")" -ge 256 ]; then
+
+        cyan=$(tput setaf 37)
+        green=$(tput setaf 64)
+        orange=$(tput setaf 166)
+        white=$(tput setaf 15)
+        yellow=$(tput setaf 136)
+        red=$(tput setaf 1)
+        purple=$(tput setaf 5)
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Prompt Statement variables.
+    # http://ss64.com/bash/syntax-prompt.html
+
+    # ------------------------------------------------------------------
+    # | PS1 - Default interactive prompt                               |
+    # ------------------------------------------------------------------
+
+    PS_LINE=`printf -- '- %.0s' {4..2000}`
+    PS_FILL=${PS_LINE:0:$COLUMNS}
+    PS_TIME="\[\033[\$((COLUMNS-10))G\] $red[\t]$reset"
+
+if [ $(id -u) = 0 ]; then
+
+    PS1="\${PS_FILL}\[\033[0G\]"      # Terminal title
+    PS1+="$reset$bold"                #
+    PS1+="$orange\u"                  # Username
+    PS1+="$white@"                    #
+    PS1+="$green\H"                   # Host
+    PS1+="$white:"
+    PS1+="$purple\w"                  # Working directory
+    PS1+="\$(get_git_repository_details \"$white on $cyan\") "
+    PS1+="${PS_TIME}$reset"           # Show Clock
+    PS1+="\n"
+    PS1+="$red$bold jobs:\j "         # Show jobs
+    PS1+="\[$reset\]\[$red\] 🐧 \[$reset$bold$red\]"
+
+else
+
+    PS1="\${PS_FILL}\[\033[0G\]"      # Terminal title
+    PS1+="$reset$bold"                #
+    PS1+="$orange\u"                  # Username
+    PS1+="$white@"                    #
+    PS1+="$green\H"                   # Host
+    PS1+="$white:"
+    PS1+="$purple\w"                  # Working directory
+    PS1+="\$(get_git_repository_details \"$white on $cyan\") "
+    PS1+="${PS_TIME}$reset"           # Show Clock
+    PS1+="\n"
+    PS1+="$red$bold jobs:\j "         # Show jobs
+    PS1+="\[$reset\]\[$green\] 🐧 \[$reset$purple\]"
+
+fi
+
+    export PS1
+
+    # ------------------------------------------------------------------
+    # | PS2 - Continuation interactive prompt                          |
+    # ------------------------------------------------------------------
+
+    PS2="⚡ "
+
+    export PS2
+
+    # ------------------------------------------------------------------
+    # | PS4 - Debug prompt                                             |
+    # ------------------------------------------------------------------
+
+    # e.g:
+    #
+    # The GNU `date` command has the `%N` interpreted sequence while
+    # other implementations don't (on macOS `gdate` can be used instead
+    # of the native `date` if the `coreutils` package has been installed).
+    #
+    #  local dateCmd=""
+    #
+    #  if [ "$(date +%N)" != "N" ] || \
+    #     [ ! -x "$(command -v "gdate")" ]; then
+    #     dateCmd="date +%s.%N"
+    #  else
+    #     dateCmd="gdate +%s.%N"
+    #  fi
+    #
+    #  PS4="+$( tput cr && tput cuf 6 &&
+    #            printf "$yellow %s $green%6s $reset" "$($dateCmd)" "[$LINENO]" )"
+    #
+    # PS4 output:
+    #
+    #   ++    1357074705.875970000  [123] '[' 1 == 0 ']'
+    #   └──┬─┘└────┬───┘ └───┬───┘ └──┬─┘ └──────┬─────┘
+    #      │       │         │        │          │
+    #      │       │         │        │          └─ command
+    #      │       │         │        └─ line number
+    #      │       │         └─ nanoseconds
+    #      │       └─ seconds since 1970-01-01 00:00:00 UTC
+    #      └─ depth-level of the subshell
+
+      PS4="+$( tput cr 2> /dev/null;
+               tput cuf 6 2> /dev/null;
+               printf "%s" "$reset" )"
+
+      export PS4
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+main() {
+    enable_color_support
+    set_prompts
+}
+
+main
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Cleanup.
+
+unset -f enable_color_support
+unset -f main
+unset -f set_prompts

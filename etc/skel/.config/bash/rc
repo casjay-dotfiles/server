@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# If not running interactively, don't do anything
+case $- in
+*i*) ;;
+*) return ;;
+esac
+
+#Source additional bash scripts
+PROFILERC=$(ls ~/.config/bash/profile/*.bash 2>/dev/null | wc -l)
+if [ "$PROFILERC" != "0"  ]; then for f in ~/.config/bash/profile/*.bash; do source $f; done; fi
+
+#if echo "$-" | grep i > /dev/null; then
+# if [ -f /usr/bin/neofetch ];
+#    then /usr/bin/neofetch
+# fi
+#fi
+
+#Send an e-mail on every root login
+#echo "ALERT - Shell Access on $HOSTNAME from $USER on: `date`" | mail -r no-reply -s "Alert: Access from $USER" $USER@$HOSTNAME
