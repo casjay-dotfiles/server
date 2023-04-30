@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php include "https://static.casjay.net/casjays-header.php"; ?>
+<?php include "https://casjaysdev-sites.github.io/static/casjays-header.php"; ?>
 <title>Domain Doesn't Exist</title>
 
 </head>
@@ -26,7 +26,7 @@ Powered by a Redhat based system<br>
 </div>
 <!-- Begin Casjays Developments Footer -->
 <center>
-<?php include "https://static.casjay.net/casjays-footer.php"; ?>
+<?php include "https://casjaysdev-sites.github.io/static/casjays-footer.php"; ?>
 </center>
 <!-- End Casjays Developments Footer -->
 </body>

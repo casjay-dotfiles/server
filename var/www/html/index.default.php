@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php include "https://static.casjay.net/casjays-header.php"; ?>
+<?php include "https://casjaysdev-sites.github.io/static/casjays-header.php"; ?>
 <title>Site Configured</title>
 </head>
 <body>
@@ -24,12 +24,12 @@ Server Admin you can now upload your site to  <br>
 Linux OsVer: <?php echo shell_exec('cat /etc/debian_version'); ?>  <br>
 ConfigVer: <?php echo shell_exec('echo $(cat /etc/casjaysdev/updates/versions/raspbian.txt | tail -n 1)'); ?><br><br><br>
 Powered by a Debian Based Distro<br>
-<a href="https://debian.org"> <img border="0" alt="Debian/Ubuntu/Raspbian" src="https://static.casjay.net/default-icons/powered_by_debian.jpg"></a><br><br><br><br>
+<a href="https://debian.org"> <img border="0" alt="Debian/Ubuntu/Raspbian" src="https://casjaysdev-sites.github.io/static/default-icons/powered_by_debian.jpg"></a><br><br><br><br>
   </div>
 
 <center>
 <!-- Begin Casjays Developments Footer -->
-<?php include "https://static.casjay.net/casjays-footer.php"; ?>
+<?php include "https://casjaysdev-sites.github.io/static/casjays-footer.php"; ?>
 </center>
 <!-- End Casjays Developments Footer -->
 </body>
