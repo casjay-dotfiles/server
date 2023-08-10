@@ -3,7 +3,7 @@ Certificate:
         Version: 3 (0x2)
         Serial Number: 0 (0x0)
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=US, ST=New York, L=Cohoes, O=Casjays Developments, OU=Casjays Developments, CN=Casjays Developments/emailAddress=ssl-admin@casjaysdev.com
+        Issuer: C=US, ST=New York, L=Cohoes, O=Casjays Developments, OU=Casjays Developments, CN=Casjays Developments/emailAddress=ssl-admin@casjaysdev.pro
         Validity
             Not Before: Dec 15 10:43:31 2018 GMT
             Not After : Dec 12 10:43:31 2028 GMT
@@ -33,7 +33,7 @@ Certificate:
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
             X509v3 Subject Alternative Name: 
-                DNS:apmpproject.org, DNS:bugs.one, DNS:cachetagalong.com, DNS:casjay.cloud, DNS:casjay.net, DNS:casjaydns.com, DNS:casjay.email, DNS:casjaygames.com, DNS:casjayhak.com, DNS:casjay.help, DNS:casjay.info, DNS:casjay.net, DNS:casjay.one, DNS:casjay.org, DNS:casjay.recipes, DNS:casjaysdev.com, DNS:casjay.shop, DNS:casjay.tel, DNS:casjay.us, DNS:casjay.xyz, DNS:casj.biz, DNS:chmweb.info, DNS:kellymalak.us, DNS:malaks.us, DNS:masonmalak.us, DNS:mileymalak.us, DNS:mmmalak.us, DNS:mpmalak.com, DNS:paranormal.one, DNS:secureit.blog, DNS:sqldb.us, DNS:whatknots404.com, DNS:*.apmpproject.org, DNS:*.bugs.one, DNS:*.cachetagalong.com, DNS:*.casjay.cloud, DNS:*.casjay.net, DNS:*.casjaydns.com, DNS:*.casjay.email, DNS:*.casjaygames.com, DNS:*.casjayhak.com, DNS:*.casjay.help, DNS:*.casjay.in, DNS:*.casjay.info, DNS:*.casjay.net, DNS:*.casjay.one, DNS:*.casjay.org, DNS:*.casjay.recipes, DNS:*.casjaysdev.com, DNS:*.casjay.shop, DNS:*.casjay.tel, DNS:*.casjay.us, DNS:*.casjay.xyz, DNS:*.casj.biz, DNS:*.chmweb.info, DNS:*.kellymalak.us, DNS:*.malaks.us, DNS:*.masonmalak.us, DNS:*.mileymalak.us, DNS:*.mmmalak.us, DNS:*.mpmalak.com, DNS:*.paranormal.one, DNS:*.secureit.blog, DNS:*.sqldb.us, DNS:*.whatknots404.com, DNS:localhost, DNS:*.localdomain, DNS:*.local, DNS:*.onion
+                DNS:apmpproject.org, DNS:bugs.one, DNS:cachetagalong.com, DNS:casjay.cloud, DNS:casjay.pro, DNS:casjaydns.com, DNS:casjay.email, DNS:casjaygames.com, DNS:casjayhak.com, DNS:casjay.help, DNS:casjay.info, DNS:casjay.pro, DNS:casjay.one, DNS:casjay.org, DNS:casjay.recipes, DNS:casjaysdev.pro, DNS:casjay.shop, DNS:casjay.tel, DNS:casjay.us, DNS:casjay.xyz, DNS:casj.biz, DNS:chmweb.info, DNS:kellymalak.us, DNS:malaks.us, DNS:masonmalak.us, DNS:mileymalak.us, DNS:mmmalak.us, DNS:mpmalak.com, DNS:paranormal.one, DNS:secureit.blog, DNS:sqldb.us, DNS:whatknots404.com, DNS:*.apmpproject.org, DNS:*.bugs.one, DNS:*.cachetagalong.com, DNS:*.casjay.cloud, DNS:*.casjay.pro, DNS:*.casjaydns.com, DNS:*.casjay.email, DNS:*.casjaygames.com, DNS:*.casjayhak.com, DNS:*.casjay.help, DNS:*.casjay.in, DNS:*.casjay.info, DNS:*.casjay.pro, DNS:*.casjay.one, DNS:*.casjay.org, DNS:*.casjay.recipes, DNS:*.casjaysdev.pro, DNS:*.casjay.shop, DNS:*.casjay.tel, DNS:*.casjay.us, DNS:*.casjay.xyz, DNS:*.casj.biz, DNS:*.chmweb.info, DNS:*.kellymalak.us, DNS:*.malaks.us, DNS:*.masonmalak.us, DNS:*.mileymalak.us, DNS:*.mmmalak.us, DNS:*.mpmalak.com, DNS:*.paranormal.one, DNS:*.secureit.blog, DNS:*.sqldb.us, DNS:*.whatknots404.com, DNS:localhost, DNS:*.localdomain, DNS:*.local, DNS:*.onion
             X509v3 Basic Constraints: 
                 CA:FALSE
             Netscape Cert Type: 
@@ -44,19 +44,19 @@ Certificate:
                 13:8D:D7:86:71:7A:55:99:61:0A:AA:EF:50:68:8B:F9:8B:26:66:17
             X509v3 Authority Key Identifier: 
                 keyid:CE:62:A0:43:94:60:69:7D:0F:1F:1B:54:5C:60:E6:64:DE:23:2F:BB
-                DirName:/C=US/ST=New York/L=Cohoes/O=Casjays Developments/OU=Casjays Developments/CN=Casjays Developments/emailAddress=ssl-admin@casjaysdev.com
+                DirName:/C=US/ST=New York/L=Cohoes/O=Casjays Developments/OU=Casjays Developments/CN=Casjays Developments/emailAddress=ssl-admin@casjaysdev.pro
                 serial:FD:B9:01:B8:48:2A:EA:E3
 
             Netscape Base Url: 
-                http://ca.casjay.net/
+                http://ca.casjay.pro/
             Netscape Revocation Url: 
-                http://ca.casjay.net/revoke.crl
+                http://ca.casjay.pro/revoke.crl
             Netscape Renewal Url: 
-                http://ca.casjay.net/renewel.php
+                http://ca.casjay.pro/renewel.php
             Netscape CA Revocation Url: 
-                http://ca.casjay.net/ca-revoke.crl
+                http://ca.casjay.pro/ca-revoke.crl
             Netscape CA Policy Url: 
-                http://ca.casjay.net/ca-renewel.php
+                http://ca.casjay.pro/ca-renewel.php
             X509v3 Key Usage: 
                 Digital Signature, Non Repudiation, Key Encipherment
     Signature Algorithm: sha256WithRSAEncryption

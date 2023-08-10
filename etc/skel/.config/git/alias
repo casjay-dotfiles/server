@@ -110,7 +110,7 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #Create new site from theme
-    newtheme = "!f() { git clone https://github.com/casjaysdev-sites/themes.casjaysdev.com ./newsite && \
+    newtheme = "!f() { git clone https://github.com/casjaysdev-sites/themes.casjaysdev.pro ./newsite && \
                rm -Rf ./newsite/.git && cd ./newsite && vim _config.yml && git init && git add .; }; f"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

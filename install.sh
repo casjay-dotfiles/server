@@ -9,7 +9,7 @@ HOME="${USER_HOME:-${HOME}}"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # @Author          : Jason
-# @Contact         : casjaysdev@casjay.net
+# @Contact         : casjaysdev@casjay.pro
 # @File            : install.sh
 # @Created         : Wed, Aug 09, 2020, 02:00 EST
 # @License         : WTFPL
@@ -35,7 +35,7 @@ GITREPO="github.com/casjay-dotfiles/minimal"
 #Public Repo
 GITURL="$GITPROTO$GITREPO"
 # Default NTP Server
-NTPSERVER="ntp.casjay.net"
+NTPSERVER="ntp.casjay.pro"
 # Set the temp directory
 DOTTEMP="/tmp/dotfiles-minimal-$USER"
 # Default dotfiles dir
