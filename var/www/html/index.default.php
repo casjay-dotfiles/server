@@ -18,9 +18,12 @@ site owner is working on it!  <br><br><br><br>
 
   <div class="c3">
 Server Admin you can now upload your site to  <br>
-<?php echo $_SERVER['DOCUMENT_ROOT']; ?>  <br><br><br>
-<?php echo "Server Name: ".$_SERVER['SERVER_NAME']."<BR>"; ?>
-<?php echo "IP Address: ".$_SERVER['SERVER_ADDR']."<BR>"; ?>  <br>
+<?php echo $_SERVER['DOCUMENT_ROOT']; ?>
+<br><br><br>
+<?php echo "System Hostname: " , gethostname() . "<br />"; ?>
+<?php echo "Server Name: ".$_SERVER['SERVER_NAME']."<br />"; ?>
+<?php echo "IP Address: ".$_SERVER['SERVER_ADDR']."<br />"; ?>
+<br>
 Linux OsVer: <?php echo shell_exec('cat /etc/debian_version'); ?>  <br>
 ConfigVer: <?php echo shell_exec('echo $(cat /etc/casjaysdev/updates/versions/raspbian.txt | tail -n 1)'); ?><br><br><br>
 Powered by a Debian Based Distro<br>
