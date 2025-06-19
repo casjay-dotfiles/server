@@ -1,5 +1,278 @@
+# All of my networks
+### local ip addresses
+[::1]/128
 127.0.0.0/8
 10.0.0.0/8
+172.16.0.0/12
 192.168.0.0/16
 
-[::1]/128
+## Hosteons.com
+### dns.casjaydns.com
+82.29.128.43
+[2402:d0c0:0012:47ab::1]/64
+
+### dns1.casjaydns.com
+103.124.104.139
+[2402:d0c0:0015:0087:0000:0000:f7f3:b529]
+
+### dns2.casjaydns.com
+103.124.105.192
+[2402:d0c0:0014:000f:0000:0000:e337:1233]
+
+### ns.casjaydns.fyi
+82.29.128.140
+[2402:d0c0:12:b52::1]/64
+
+### pihole.casjay.nl
+82.29.128.145
+[2402:d0c0:12:e04e::1]/64
+
+### myip.ifcfg.us
+82.29.128.146
+[2402:d0c0:12:e0dd::1]/54
+
+### search.scour.li
+82.29.128.193
+[2402:d0c0:12:2fa2::1]/64
+
+## hivelocity.net
+### proxmox.casjayvps.us
+23.227.180.24/30
+[2604:4500:000a:048d::1]/64
+### netbird.vpn2me.us
+23.227.187.212
+[2604:4500:0009:003d:1c00:6aff:fe00:0747]
+
+### wg.casjayvpn.cc
+74.50.113.149
+[2604:4500:0009:003d:1c00:efff:fe00:0411]
+
+### Server
+23.227.180.24/30
+[2604:4500:000a:048d::1]/64
+
+## interserver.net
+### nc.casjay.cloud
+66.23.228.176
+[2604:a00:50:21:216:3eff:fe2e:d4c6]
+
+### uptime.servicestat.us
+66.45.236.102
+[2604:a00:50:160:216:3eff:fe2e:dab3]
+
+## racknerd.com
+### box.casjay.email
+66.63.179.3
+
+### help.casjay.support
+148.135.52.175
+[2607:f130:0:103:ff:ff:9a65:f4fb]
+
+### testing.casjay.dev
+142.171.185.77
+[2607:f130:0:f8:ff:ff:41bf:5e1]
+
+### sso.casjay.pw
+142.171.254.123
+[2607:f130:0:f8:ff:ff:4238:2d3e]
+
+### pbx.casjay.tel
+142.171.133.138
+[2607:f130:0:ee:ff:ff:a7c6:35f2]
+
+### mail.casjay.email
+148.135.101.109
+[2607:f130:0:ea:ff:ff:78ce:5e7f]
+
+### web.casjay.gdn
+148.135.101.108
+[2607:f130:0:ea:ff:ff:1b68:f9b2]
+
+## ssdnodes.com
+### dc.casjay.org
+104.225.216.132
+[2602:ff16:3:12eb::1]/64
+
+### ci.amd64.us 
+104.225.216.157
+[2602:ff16:3:1180::1]/64
+
+### reg.dockersrc.us
+208.87.133.101
+[2602:ff16:3:0:1:33b:0:1]/64
+
+### media.csj.rocks 
+104.225.216.129
+[2602:ff16:3:0:1:133:0:1]/64
+
+### db.sqldb.us 
+172.93.49.72
+[2602:ff16:3:0:1:266:0:1]/64
+
+### workspace.casjay.us 
+104.225.216.21
+[2602:ff16:3:0:1:474:0:1]/64
+
+### chat.casjay.social 
+23.29.118.136
+[2602:ff16:3:0:1:234:0:1]/64
+
+### git.casjay.work 
+208.87.133.28
+[2602:ff16:3:0:1:344:0:1]/64
+
+### services.casjay.app 
+208.87.128.163
+[2602:ff16:3:0:1:2fa:0:1]/64
+
+### hosting.casjay.xyz 
+104.225.219.29
+[2602:ff16:15:0:1:dc:0:1]/64
+
+### code.casjay.dev
+172.93.54.93
+[2602:ff16:11:0:1:a:0:1]/64
+
+## cloud.oracle.com
+### redir.redxt.us
+132.226.33.75
+[2603:c020:4005:4d00:6e70:8e31:88e9:7a42]
+
+### sh.gsh.li
+150.230.183.65
+[2603:c020:4005:4d00:69b2:176b:3485:c51e]
+
+### build.arm64.us
+141.148.37.55
+[2603:c020:4005:4d00:3c49:c239:91c9:74c3]
+
+# CloudFlare
+173.245.48.0/20
+103.21.244.0/22
+103.22.200.0/22
+103.31.4.0/22
+141.101.64.0/18
+108.162.192.0/18
+190.93.240.0/20
+188.114.96.0/20
+197.234.240.0/22
+198.41.128.0/17
+162.158.0.0/15
+104.16.0.0/13
+104.24.0.0/14
+172.64.0.0/13
+131.0.72.0/22
+#|2400:cb00::1]/32
+#[2606:4700::1]/32
+#[2803:f800::1]/32
+#[2405:b500::1]/32
+#[2405:8100::1]/32
+#[2a06:98c0::1]/29
+#[2c0f:f248::1]/32
+
+# Dynamic
+35.167.74.121
+35.166.202.113
+35.160.3.103
+
+## mpm7tkm
+mpmalak.com
+*.mpmalak.com
+74.78.220.55
+syn-074-078-220-055.res.spectrum.com
+
+# duckdns
+bashit.duckdns.org
+casjay.duckdns.org
+mpm7tkm.duckdns.org
+*.bashit.duckdns.org
+*.casjay.duckdns.org
+*.mpm7tkm.duckdns.org
+
+# Domains
+amd64.us
+apmpproject.org
+arm64.us
+casjay.app
+casjay.casa
+casjay.cc
+casjay.cloud
+casjay.coffee
+casjay.dev
+casjay.email
+casjay.gdn
+casjay.in
+casjay.info
+casjay.link
+casjay.nl
+casjay.org
+casjay.pro
+casjay.pw
+casjay.social
+casjay.support
+casjay.tel
+casjay.us
+casjay.work
+casjay.xyz
+casjaydns.com
+casjaydns.fyi
+casjaysdev.pro
+casjayvpn.cc
+casjayvps.us
+csj.lol
+csj.rocks
+dockersrc.us
+gsh.li
+ifcfg.us
+malaks.us
+onhealth.xyz
+pste.us
+redxt.us
+scour.li
+servicestat.us
+sqldb.us
+vpn2me.us
+
+# Subdomains
+*.amd64.us
+*.apmpproject.org
+*.arm64.us
+*.casjay.app
+*.casjay.casa
+*.casjay.cc
+*.casjay.cloud
+*.casjay.coffee
+*.casjay.dev
+*.casjay.email
+*.casjay.gdn
+*.casjay.in
+*.casjay.info
+*.casjay.link
+*.casjay.nl
+*.casjay.org
+*.casjay.pro
+*.casjay.pw
+*.casjay.social
+*.casjay.support
+*.casjay.tel
+*.casjay.us
+*.casjay.work
+*.casjay.xyz
+*.casjaydns.com
+*.casjaydns.fyi
+*.casjaysdev.pro
+*.casjayvpn.cc
+*.casjayvps.us
+*.csj.lol
+*.csj.rocks
+*.dockersrc.us
+*.gsh.li
+*.ifcfg.us
+*.malaks.us
+*.onhealth.xyz
+*.pste.us
+*.redxt.us
+*.scour.li
+*.servicestat.us
+*.sqldb.us
+*.vpn2me.us
